@@ -42,12 +42,14 @@ public class Cuidadores extends Empleados {
             }
         }
     }
-            
-    public Cuidadores( String Cedula, String Nombre, LocalDate FechaNacimiento, String Telefono, double SalarioMen,String Especialidad) {
-        super(Cedula, Nombre, FechaNacimiento, Telefono, SalarioMen);
+
+    public Cuidadores(String Especialidad, String[] RegistroActividades, double SalarioMen, String cedula, String NombreComp, LocalDate FechaNacimiento, String Telefono) {
+        super(SalarioMen, cedula, NombreComp, FechaNacimiento, Telefono);
         this.Especialidad = Especialidad;
         this.RegistroActividades = new String[100];
     }
+            
+    
     
     
 }
