@@ -4,8 +4,8 @@
  */
 package Personas;
 
+import Utils.UtilDate;
 import java.time.LocalDate;
-import java.time.Period;
 
 
 public class Persona {
@@ -30,6 +30,10 @@ public class Persona {
         return Telefono;
     }
     
+    public int ObtnerEdad(){
+        return UtilDate.CalcuarEdad(FechaNacimiento);
+    }
+    
     public void setTelefono(String Telefono) {
         if(Telefono!=null && Telefono.matches("^\\d{2}-\\d{2}-\\d{2}-\\d{2}")){
         this.Telefono = Telefono;
@@ -40,7 +44,7 @@ public class Persona {
     public Persona(String cedula, String NombreComp, LocalDate FechaNacimiento, String Telefono) {
         this.cedula = cedula;
         this.NombreComp = NombreComp;
-        if(FechaNacimiento!=null && !FechaNacimiento.isAfter(LocalDate.now()) && 18 < Period.between(FechaNacimiento,LocalDate.now()).getYears()){
+        if(FechaNacimiento!=null && UtilDate.ValidarFechasFut(LocalDate.now()) && UtilDate.Validar18años(FechaNacimiento)){
             this.FechaNacimiento = FechaNacimiento;
         }
         if(Telefono!=null && Telefono.matches("^\\d{2}-\\d{2}-\\d{2}-\\d{2}")){
