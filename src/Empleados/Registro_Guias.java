@@ -44,12 +44,14 @@ public class Registro_Guias extends Empleados {
             }
         }
     }
-    
-    public Registro_Guias( String Cedula, String Nombre, LocalDate FechaNacimiento, String Telefono, double SalarioMen) {
-        super(Cedula, Nombre, FechaNacimiento, Telefono, SalarioMen);
+
+    public Registro_Guias(String[] Idiomas, String[] RegistroRecorrido, double SalarioMen, String cedula, String NombreComp, LocalDate FechaNacimiento, String Telefono) {
+        super(SalarioMen, cedula, NombreComp, FechaNacimiento, Telefono);
         this.Idiomas = new String[25];
         this.RegistroRecorrido= new String[200];
     }
+    
+    
 
     @Override
     public String toString() {
